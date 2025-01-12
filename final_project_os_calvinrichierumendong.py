@@ -1,6 +1,8 @@
 import subprocess
 import shlex
 import os
+import shutil
+
 
 def ls():
     return "\n".join(os.listdir(os.getcwd()))
@@ -35,8 +37,6 @@ def rm(filename):
         os.remove(filename)
     except FileNotFoundError:
         return f"rm: {filename}: No such file"
-
-import shutil
 
 def cp(source, destination):
     try:
